@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.Talon;
 public class MecanumDrive extends SampleRobot {
 
 	private static final int FRONT_LEFT_CHANNEL = 4;
-	private static final int R+EAR_LEFT_CHANNEL = 3;
+	private static final int REAR_LEFT_CHANNEL = 3;
 	private static final int FRONT_RIGHT_CHANNEL = 2;
 	private static final int REAR_RIGHT_CHANNEL = 1;
 	

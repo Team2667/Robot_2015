@@ -12,17 +12,14 @@
 package org.usfirst.frc2667.Robot_2015.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-
-import org.usfirst.frc2667.Robot_2015.OI;
 import org.usfirst.frc2667.Robot_2015.Robot;
-import org.usfirst.frc2667.Robot_2015.subsystems.Drivetrain;
 
 /**
  *
  */
-public class  ArcadeDrive extends Command {
+public class  ArcadeDriveSlow extends Command {
 
-    public ArcadeDrive() {
+    public ArcadeDriveSlow() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -34,14 +31,13 @@ public class  ArcadeDrive extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
+    	Robot.drivetrain.setMaxOutput(0.25);
     }
 
-    // Called reeatedly when this Command is scheduled to run
+    // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.drivetrain.setArcadeDrive(Robot.oi.joystick);
     	
-    	// if the tote is in range pick up tote
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -51,7 +47,7 @@ public class  ArcadeDrive extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.drivetrain.stop();
+    	Robot.drivetrain.setMaxOutput(0.5);
     }
 
     // Called when another command which requires one or more of the same

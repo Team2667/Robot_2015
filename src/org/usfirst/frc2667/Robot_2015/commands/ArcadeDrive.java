@@ -40,6 +40,8 @@ public class  ArcadeDrive extends Command {
     // Called reeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.drivetrain.setArcadeDrive(Robot.oi.joystick);
+    	
+    	// if the tote is in range pick up tote
     }
 
     // Make this return true when this Command no longer needs to run execute()

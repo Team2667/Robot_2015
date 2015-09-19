@@ -48,7 +48,7 @@ public class RobotMap {
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);        
 
-        elevatorSpeedController1 = new Talon(4);
+        elevatorSpeedController1 = new Talon(2);
         LiveWindow.addActuator("Elevator", "Speed Controller 1", (Talon) elevatorSpeedController1);
         
 

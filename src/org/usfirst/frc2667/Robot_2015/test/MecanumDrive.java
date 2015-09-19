@@ -24,7 +24,7 @@ public class MecanumDrive extends SampleRobot {
 		this.robotDrive.setExpiration(0.1D);
 		this.robotDrive.setInvertedMotor(MotorType.kFrontLeft, true);
 		this.robotDrive.setInvertedMotor(MotorType.kRearLeft, true);
-		
+		this.robotDrive.setMaxOutput(0.2D);
 		this.joyStick = new Joystick(JOYSTICK_CHANNEL);
 	}
 	
@@ -36,7 +36,8 @@ public class MecanumDrive extends SampleRobot {
 			SmartDashboard.putNumber("posZ=", this.joyStick.getZ());
 			SmartDashboard.putNumber("rotation(radians)=", this.joyStick.getDirectionRadians());
 			SmartDashboard.putNumber("rotation(degrees)=", this.joyStick.getDirectionDegrees());
-			robotDrive.mecanumDrive_Polar(getThrottle(), joyStick.getDirectionRadians(), 0);
+			//robotDrive.mecanumDrive_Polar(getThrottle(), joyStick.getDirectionRadians(), 0);
+			robotDrive.mecanumDrive_Cartesian(this.joyStick.getX(), this.joyStick.getY(), this.joyStick.getDirectionRadians(), 0);
 		}
 	}
 	

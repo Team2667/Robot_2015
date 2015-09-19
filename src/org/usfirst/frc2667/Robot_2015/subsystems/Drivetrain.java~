@@ -43,6 +43,10 @@ public class Drivetrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    public void setMaxOutput(double speed) {
+    	robotDrive.setMaxOutput(speed);
+    }
+    
     public void setArcadeDrive(Joystick joystick){
     	robotDrive.arcadeDrive(joystick);
     }
